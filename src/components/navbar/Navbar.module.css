@@ -1,0 +1,6 @@
+.nav-content {
+  border-bottom: 1px solid #353535;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
