@@ -31,3 +31,32 @@
 .nav_right {
   color: #757575;
 }
+
+.cta_link {
+  border: 1px solid #fc762d;
+  color: #fc762d;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  border-radius: 9rem;
+  padding: 0.7rem 1rem 0.5rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: inline-block;
+}
+
+.cta_link:hover {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.more_info {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.more_link_text {
+  color: inherit;
+}
