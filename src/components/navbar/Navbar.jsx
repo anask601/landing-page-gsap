@@ -31,7 +31,7 @@ const Navbar = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.cta_link}
+                  className="cta_link"
                 >
                   {link.text}
                 </a>
