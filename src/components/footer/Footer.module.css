@@ -1,0 +1,14 @@
+.container_footer {
+  height: 1100px;
+  padding-top: 6.5em;
+  padding-bottom: 6em;
+  justify-content: center;
+}
+
+.footer_content {
+  padding-right: 60px;
+  padding-left: 60px;
+  max-width: 83.125em;
+  margin-right: auto;
+  margin-left: auto;
+}
