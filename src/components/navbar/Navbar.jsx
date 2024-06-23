@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 const Navbar = () => {
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector(".hero_section_container");
+
+      const heroSectionHeight = heroSection ? heroSection.offsetHeight : 0;
+
+      const scrollPosition = window.scrollY;
+
+      const isScrollingDown = scrollPosition > lastScrollTop;
+
+      if (isScrollingDown && scrollPosition >= heroSectionHeight) {
+        setIsHidden(true);
+      } else if (!isScrollingDown && scrollPosition < heroSectionHeight) {
+        setIsHidden(false);
+      }
+
+      setLastScrollTop(scrollPosition);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+
   const links = [
     {
       href: "https://webflow.partnerlinks.io/column-image-scroll-animation",
@@ -21,7 +49,7 @@ const Navbar = () => {
     text: "More tutorials",
   };
   return (
-    <nav className={styles.nav_content}>
+    <nav className={`${styles.nav_content} ${isHidden ? styles.hidden : ""}`}>
       <div className={styles.nav_outer}>
         <div className={styles.nav_inner}>
           <div className={styles.nav_left}>
