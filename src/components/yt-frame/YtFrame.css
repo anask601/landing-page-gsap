@@ -1,0 +1,65 @@
+.yt_tutorial {
+  padding-top: 15em;
+  padding-bottom: 15em;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.yt_container {
+  max-width: 80rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yt_preview_wrap {
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  border-radius: 1em;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.yt_tutorial_img {
+  opacity: 0.72;
+  object-fit: contain;
+  border-radius: 1em;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.yt_tutorial_img:hover {
+  transform: scale(1.03);
+}
+
+.yt_play_button {
+  background-color: #e61313;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 7em;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  font-size: 1.1em;
+  display: flex;
+  position: absolute;
+  box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.28);
+}
+
+.yt_play_icon {
+  height: 3.9em;
+  margin-right: -0.2em;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  display: inline-block;
+}
