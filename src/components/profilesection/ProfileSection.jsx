@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProfileSection.css";
 import { gsap } from "gsap";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const ProfileSection = () => {
+  const [profileData, setProfileData] = useState(null);
+
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      const querySnapshot = await getDocs(collection(db, "profile"));
+      const profiles = querySnapshot.docs.map((doc) => doc.data());
+      setProfileData(profiles[0]);
+    };
+
+    fetchProfileData();
+  }, []);
+
   const shakeHand = () => {
     console.log("Mouse entered, shaking hand");
     gsap.to(".waving-hand", {
@@ -42,14 +56,12 @@ const ProfileSection = () => {
         </div>
         <div className="title_description_content_wrap">
           <h3 className="title">
-            Hi <span className="waving-hand">👋</span> My name is Jonas Arleth
-            and I’m a Webdesigner from Hamburg
+            Hi <span className="waving-hand">👋</span>
+            {profileData?.title}
           </h3>
           <div className="description_content_wrap">
             <p className="description_content">
-              In addition to my work as a web designer, I help thousands of
-              freelancers across Germany grow their web design business with my
-              blog, podcast, and YouTube channel.&nbsp;
+              {profileData?.description}&nbsp;
             </p>
           </div>
           <a
