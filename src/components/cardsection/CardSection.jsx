@@ -28,9 +28,7 @@ const CardSection = () => {
     });
 
     tl.to(".img_1", {
-      y: "0%",
-      duration: 1,
-      // ease: "power1.inOut",
+      duration: 3,
       willChange: "transform",
       transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
       transformStyle: "preserve-3d",
@@ -38,9 +36,7 @@ const CardSection = () => {
       .to(
         ".img_2",
         {
-          y: "0%",
-          duration: 1,
-          // ease: "power1.inOut",
+          duration: 2,
           willChange: "transform",
           transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
           transformStyle: "preserve-3d",
@@ -50,9 +46,7 @@ const CardSection = () => {
       .to(
         ".img_3",
         {
-          y: "0%",
           duration: 1,
-          // ease: "power1.inOut",
           willChange: "transform",
           transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
           transformStyle: "preserve-3d",
@@ -62,24 +56,28 @@ const CardSection = () => {
       .to(
         ".text_1",
         {
-          y: "0%",
-          duration: 1,
           ease: "power1.inOut",
           willChange: "transform",
           transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
           transformStyle: "preserve-3d",
         },
-        "-=0.5"
+        "-=0.1"
       )
       .to(
         ".text_2",
         {
-          y: "0%",
-          duration: 1,
           ease: "power1.inOut",
           willChange: "transform",
           transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
           transformStyle: "preserve-3d",
+        },
+        "-=0.1"
+      )
+      .to(
+        ".scroll_content_description",
+        {
+          willChange: "opacity",
+          opacity: "1",
         },
         "-=0.5"
       );
@@ -183,7 +181,13 @@ const CardSection = () => {
               to Mars
             </div>
           </div>
-          <div className="scroll_content_description">
+          <div
+            className="scroll_content_description"
+            style={{
+              willChange: "opacity",
+              opacity: 0,
+            }}
+          >
             <p className="scroll_content_text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse varius enim in eros elementum tristique. Duis cursus,
