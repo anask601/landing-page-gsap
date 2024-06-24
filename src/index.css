@@ -29,3 +29,16 @@ body {
 .cta_link.is_large {
   font-size: 1em;
 }
+
+@media screen and (max-width: 479px) {
+  .cta_link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cta_link {
+    font-size: 1rem;
+  }
+}

@@ -63,3 +63,12 @@ img {
   max-width: 100%;
   display: inline-block;
 }
+
+@media screen and (max-width: 767px) {
+  .yt_tutorial {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}

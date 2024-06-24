@@ -11,10 +11,10 @@ function App() {
       <article className="nav-hero-section">
         <Navbar />
         <HeroSection />
-        <CardSection />
-        <YtFrame />
-        <Footer />
       </article>
+      <CardSection />
+      <YtFrame />
+      <Footer />
     </div>
   );
 }

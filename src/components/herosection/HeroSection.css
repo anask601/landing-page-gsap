@@ -4,7 +4,6 @@
 }
 
 .hero_section_text {
-  display: flex;
   column-gap: 2em;
   row-gap: 2em;
   color: #c7c7c7;
@@ -14,9 +13,10 @@
   align-items: center;
   width: 100%;
   max-width: 58rem;
-  min-height: 100vh;
+  min-height: 100svh;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
 }
 
 .hero_subtitle {
@@ -42,4 +42,31 @@
 
 .hero_description_link {
   color: inherit;
+}
+
+h1 {
+  letter-spacing: -0.01em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0.67em 0;
+}
+
+@media screen and (max-width: 991px) {
+  .hero_section_container {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero_description {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .hero_title {
+    font-size: 2.8em;
+  }
 }

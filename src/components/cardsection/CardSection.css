@@ -118,3 +118,48 @@ img {
   right: auto;
   box-shadow: 1.5rem 0 2rem rgba(0, 0, 0, 0.11);
 }
+
+@media screen and (max-width: 767px) {
+  .image_wrapper_content {
+    height: auto;
+  }
+  .image_wrapper_scroll {
+    position: static;
+  }
+  .image_wrapper_scroll_inner {
+    width: 100%;
+  }
+
+  .scroll_text_container {
+    width: 100%;
+    min-height: auto;
+    margin-top: 0;
+    padding-right: 0;
+  }
+  .scroll_content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .scroll_content_title {
+    font-size: 15vw;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .image_wrapper_scroll_inner {
+    position: relative;
+  }
+  .image_wrap {
+    aspect-ratio: 3 / 2;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .scroll_text_container {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+}

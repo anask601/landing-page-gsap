@@ -1,6 +1,5 @@
 .container_footer {
   background-color: #1c1c1c;
-  height: 1100px;
   padding-top: 6.5em;
   padding-bottom: 6em;
   justify-content: center;
@@ -12,4 +11,27 @@
   max-width: 83.125em;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .container_footer {
+    font-size: 0.82rem;
+  }
+  .footer_content {
+    padding-right: 6vw;
+    padding-left: 6vw;
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container_footer {
+    font-size: 0.72rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .footer_content {
+    max-width: none;
+  }
 }
