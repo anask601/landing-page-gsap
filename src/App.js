@@ -1,4 +1,5 @@
 import "./App.css";
+import CardSection from "./components/cardsection/CardSection";
 import Footer from "./components/footer/Footer";
 import HeroSection from "./components/herosection/HeroSection";
 import Navbar from "./components/navbar/Navbar";
@@ -10,6 +11,7 @@ function App() {
       <article className="nav-hero-section">
         <Navbar />
         <HeroSection />
+        <CardSection />
         <YtFrame />
         <Footer />
       </article>
