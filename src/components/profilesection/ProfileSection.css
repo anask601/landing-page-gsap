@@ -85,3 +85,37 @@
 .waving-hand {
   display: inline-block;
 }
+
+@media screen and (max-width: 479px) {
+  .profile_info_wrap {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .user_avatar_wrapper {
+    margin-bottom: 2em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .user_avatar_wrapper {
+    margin-right: 6vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title_description_content_wrap {
+    .title {
+      font-size: 2rem;
+    }
+  }
+  .description_content_wrap {
+    padding-bottom: 1.6rem;
+  }
+  .description_content,
+  .link_txt {
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+  }
+}

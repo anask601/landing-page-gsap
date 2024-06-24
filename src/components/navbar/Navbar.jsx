@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className={styles.nav_inner}>
           <div className={styles.nav_left}>
             {links.map((link, index) => (
-              <div key={index} className="link-wrapper">
+              <div key={index} className={styles.link_wrapper}>
                 <a
                   href={link.href}
                   target="_blank"
@@ -67,7 +67,7 @@ const Navbar = () => {
             ))}
           </div>
           <div className={styles.nav_right}>
-            <div className="link-wrapper">
+            <div className={styles.link_wrapper}>
               <a
                 href={moreTutorialsLink.href}
                 target="_blank"
