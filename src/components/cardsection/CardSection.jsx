@@ -7,6 +7,50 @@ import { db } from "../../firebase";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const createGsapTimeline = (createAnimation) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      start: "top end",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+
+  const imageMovingToLeft = (number) => ({
+    duration: number,
+    willChange: "transform",
+    transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+    transformStyle: "preserve-3d",
+  });
+
+  const textAnimation = () => ({
+    ease: "power1.inOut",
+    willChange: "transform",
+    transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+    transformStyle: "preserve-3d",
+  });
+  const fadeIn = () => ({
+    willChange: "opacity",
+    opacity: "1",
+  });
+  createAnimation(tl, ".img_1", imageMovingToLeft(3));
+  createAnimation(tl, ".img_2", imageMovingToLeft(2), "-=0.5");
+  createAnimation(tl, ".img_3", imageMovingToLeft(1), "-=0.5");
+  createAnimation(tl, ".text_1", textAnimation(), "-=0.1");
+  createAnimation(tl, ".text_2", textAnimation(), "-=0.1");
+  createAnimation(tl, ".scroll_content_description", fadeIn(), "-=0.5");
+
+  return tl;
+};
+
+const createAnimation = (timeline, selector, properties, position = null) => {
+  if (position) {
+    timeline.to(selector, properties, position);
+  } else {
+    timeline.to(selector, properties);
+  }
+};
+
 const CardSection = () => {
   const scrollInnerRef = useRef(null);
   const [profileData, setProfileData] = useState(null);
@@ -32,71 +76,9 @@ const CardSection = () => {
           scrub: true,
         },
       });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          start: "top end",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-
-      tl.to(".img_1", {
-        duration: 3,
-        willChange: "transform",
-        transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-        transformStyle: "preserve-3d",
-      })
-        .to(
-          ".img_2",
-          {
-            duration: 2,
-            willChange: "transform",
-            transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-            transformStyle: "preserve-3d",
-          },
-          "-=0.5"
-        )
-        .to(
-          ".img_3",
-          {
-            duration: 1,
-            willChange: "transform",
-            transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-            transformStyle: "preserve-3d",
-          },
-          "-=0.5"
-        )
-        .to(
-          ".text_1",
-          {
-            ease: "power1.inOut",
-            willChange: "transform",
-            transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-            transformStyle: "preserve-3d",
-          },
-          "-=0.1"
-        )
-        .to(
-          ".text_2",
-          {
-            ease: "power1.inOut",
-            willChange: "transform",
-            transform: `translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-            transformStyle: "preserve-3d",
-          },
-          "-=0.1"
-        )
-        .to(
-          ".scroll_content_description",
-          {
-            willChange: "opacity",
-            opacity: "1",
-          },
-          "-=0.5"
-        );
     }
-  }, []);
+    createGsapTimeline(createAnimation);
+  }, [scrollInnerRef]);
 
   return (
     <div className="image_scroll_container">
